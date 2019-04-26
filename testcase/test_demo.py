@@ -7,6 +7,7 @@ from appium import webdriver
 
 # Returns abs path relative to this file and not cwd
 from page.init_page import InitPage
+from page.jd_main_page import JDMainPage
 
 PATH = lambda p: os.path.abspath(
     os.path.join(os.path.dirname(__file__), p)
@@ -15,8 +16,12 @@ PATH = lambda p: os.path.abspath(
 class TestDemo(TestCase):
     def setUp(self):
         self.driver = caps()
-        initPage=InitPage(self.driver)
+        initPage = InitPage(self.driver)
         initPage.goto_mainpage()
+
+        jdMainPage=JDMainPage(self.driver)
+        jdMainPage.close_ad()
+        jdMainPage.search('华为')
 
     def tearDown(self):
         self.driver.quit()
