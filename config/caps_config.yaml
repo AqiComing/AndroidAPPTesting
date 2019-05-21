@@ -1,0 +1,7 @@
+platformName: 'Android'
+platformVersion: '9'
+deviceName: 'Aqi'
+appPackage: 'com.jingdong.app.mall'
+appActivity: '.main.MainActivity'
+ip: '127.0.0.1'
+port: '4273'
